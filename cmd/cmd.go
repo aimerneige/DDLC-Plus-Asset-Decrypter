@@ -25,8 +25,8 @@ func Execute() {
 				logs.PrintAppInformation()
 				fileIn := c.Args().Get(0)
 				fileOut := fmt.Sprintf("%s.out", fileIn)
-				logs.InfoLog("Input File:  \"" + fileIn + "\"")
-				logs.InfoLog("Output File: \"" + fileOut + "\"")
+				logs.InfoLog(fmt.Sprintf("Input File: \"%s\".", fileIn))
+				logs.InfoLog(fmt.Sprintf("Output File: \"%s\".", fileOut))
 				if utils.CheckFileExist(fileOut) {
 					logs.ErrorLog(fmt.Sprintf("File \"%s\" has exist, program exit!", fileOut))
 				} else {
