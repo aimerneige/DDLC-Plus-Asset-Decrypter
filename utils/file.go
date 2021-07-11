@@ -1,3 +1,6 @@
+// (c) 2021 AimerNeige
+// This code is licensed under MIT license (see LICENSE for details)
+
 package utils
 
 import (
