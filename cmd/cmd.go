@@ -19,7 +19,7 @@ func Execute() {
 		Name:      "ddlcpad",
 		Usage:     "Doki Doki Literature Club Plus Asset Decrypter",
 		UsageText: "ddlcpad file",
-		Version:   "1.0.0",
+		Version:   "1.0.1",
 		Action: func(c *cli.Context) error {
 			if c.NArg() > 0 && c.NArg() < 2 {
 				logs.PrintAppInformation()
