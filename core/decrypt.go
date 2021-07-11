@@ -19,7 +19,7 @@ func Decrypt(in, out string) bool {
 	if utils.CheckFileExist(in) {
 		logs.InfoLog(fmt.Sprintf("Start read file \"%s\". Size: %d", in, utils.GetFileSize(in)))
 	} else {
-		logs.ErrorLog("File \"%s\" does not exist!")
+		logs.ErrorLog(fmt.Sprintf("File \"%s\" does not exist!", in))
 		return false
 	}
 	// try to read the whole file
