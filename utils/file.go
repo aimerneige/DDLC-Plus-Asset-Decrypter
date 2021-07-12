@@ -11,20 +11,17 @@ import (
 func GetFileSize(f string) (ret int64) {
 	fi, err := os.Stat(f)
 	if err != nil {
-		ret = -1
-	} else {
-		ret = fi.Size()
+		return -1
 	}
-	return
+	return fi.Size()
 }
 
 // CheckFileExist Check if file exist
 func CheckFileExist(f string) bool {
 	if _, err := os.Stat(f); err == nil {
 		return true
-	} else {
-		return false
 	}
+	return false
 }
 
 // CheckFileIsDir Check if file a directory
@@ -35,7 +32,6 @@ func CheckFileIsDir(f string) bool {
 	}
 	if fi.IsDir() {
 		return true
-	} else {
-		return false
 	}
+	return false
 }
