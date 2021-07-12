@@ -18,6 +18,18 @@ You can download a binary file on [release](https://github.com/Perfare/AssetStud
 
 Just open your terminal (or powershell on windows), run the binary file.
 
+Basic usage:
+
+```bash
+# On Linux
+./ddlcpad <file_name>
+```
+
+```powershell
+# On windows
+.\ddlcpad.exe <file_name>
+```
+
 Use `--help` or `-h` to get more help.
 
 ## How to build
