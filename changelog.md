@@ -6,4 +6,4 @@ Fix some log print error.
 
 ## 1.0.0
 
-First editon with core function.
+First edition with core function.
