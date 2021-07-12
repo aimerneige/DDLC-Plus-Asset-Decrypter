@@ -16,6 +16,7 @@ const decrypt_key = 40 // decrypt key BY MlgmXyysd
 // DecryptDirectly Decrypt data and create a new file.
 func Decrypt(in, out string) bool {
 	logs.InfoLog(fmt.Sprintf("Start read file \"%s\". Size: %d bytes.", in, utils.GetFileSize(in)))
+
 	// try to read the whole file
 	data, err := ioutil.ReadFile(in)
 	if err != nil {
@@ -23,15 +24,18 @@ func Decrypt(in, out string) bool {
 		return false
 	}
 	logs.InfoLog(fmt.Sprintf("File \"%s\" read successful!", in))
+
 	// check cy file
 	if !cyFileCheck(data[:7]) {
 		logs.ErrorLog(fmt.Sprintf("File \"%s\" does not a cy file.", in))
 		return false
 	}
+
 	// start decrypt
 	logs.InfoLog("Decrypt Start")
 	data = xorByte(data)
 	logs.InfoLog("Decrypt End")
+
 	// write output file
 	logs.InfoLog(fmt.Sprintf("Start writing file \"%s\".", out))
 	err = ioutil.WriteFile(out, data, 0644)
