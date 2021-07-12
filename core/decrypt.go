@@ -11,7 +11,7 @@ import (
 	"github.com/AimerNeige/DDLC-Plus-Asset-Decrypter/utils"
 )
 
-const DECRYPT_KEY = 40 // decrypt key BY MlgmXyysd
+const decrypt_key = 40 // decrypt key BY MlgmXyysd
 
 // DecryptDirectly Decrypt data and create a new file.
 func Decrypt(in, out string) bool {
@@ -46,7 +46,7 @@ func Decrypt(in, out string) bool {
 
 func xorByte(str []byte) (ret []byte) {
 	for i := 0; i < len(str); i++ {
-		ret = append(ret, str[i]^DECRYPT_KEY)
+		ret = append(ret, str[i]^decrypt_key)
 	}
 	return
 }
