@@ -23,12 +23,17 @@ Just install and config go on your computer, then run this command:
 go build -o ddlcpad.exe
 ```
 
-If you wants to build linux binary on windows:
+```bash
+# On Linux
+go build -o ddlcpad
+```
+
+If you wants to build exe file on Linux:
 
 ```bash
-set GOARCH=amd64
-set GOOS=linux
-go build -o ddlcpad
+export GOARCH=amd64
+export GOOS=windows
+go build -o ddlcpad.exe
 ```
 
 ## Why do this
