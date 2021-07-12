@@ -1,6 +1,6 @@
 # ddlcpad
 
-## **Refer <https://github.com/MlgmXyysd/DDLC-Plus-Asset-Decrypter>**
+**Refer <https://github.com/MlgmXyysd/DDLC-Plus-Asset-Decrypter>**
 
 ## What is this
 
