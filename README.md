@@ -12,7 +12,7 @@ After decrypt, you will get a `*.out` file. Put it into [Perfare/AssetStudio](ht
 
 ## How to install
 
-You can download a binary file on [release](https://github.com/Perfare/AssetStudio/releases). Or you can [build](https://github.com/aimerneige/DDLC-Plus-Asset-Decrypter#how-to-build) it yourself.
+You can download a binary file on [release](https://github.com/aimerneige/DDLC-Plus-Asset-Decrypter/releases). Or you can [build](https://github.com/aimerneige/DDLC-Plus-Asset-Decrypter#how-to-build) it yourself.
 
 ## How to use
 
