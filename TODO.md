@@ -1,4 +1,4 @@
-- [ ] *.cy file check
+- [x] *.cy file check
 - [ ] read file in cache
 - [ ] Chinese language support
 - [ ] decrypt folder

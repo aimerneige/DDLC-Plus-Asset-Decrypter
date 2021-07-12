@@ -29,6 +29,11 @@ func Decrypt(in, out string) bool {
 		return false
 	}
 	logs.InfoLog(fmt.Sprintf("File \"%s\" read successful!", in))
+	// check cy file
+	if !cyFileCheck(data[:7]) {
+		logs.ErrorLog(fmt.Sprintf("File \"%s\" does not a cy file.", in))
+		return false
+	}
 	// start decrypt
 	logs.InfoLog("Decrypt Start")
 	data = xorByte(data)
@@ -44,9 +49,24 @@ func Decrypt(in, out string) bool {
 	return true
 }
 
+// xorByte XOR all bytes input with decrypt key
 func xorByte(str []byte) (ret []byte) {
 	for i := 0; i < len(str); i++ {
 		ret = append(ret, str[i]^decrypt_key)
 	}
 	return
+}
+
+// cyFileCheck Check file header and makesure the file input is a *.cy file
+func cyFileCheck(header []byte) bool {
+	if len(header) != 7 {
+		return false
+	}
+	right_header := [7]byte{0x7D, 0x46, 0x41, 0x5C, 0x51, 0x6E, 0x7B}
+	for i, b := range right_header {
+		if b != header[i] {
+			return false
+		}
+	}
+	return true
 }
