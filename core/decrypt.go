@@ -15,13 +15,7 @@ const decrypt_key = 40 // decrypt key BY MlgmXyysd
 
 // DecryptDirectly Decrypt data and create a new file.
 func Decrypt(in, out string) bool {
-	// check if file exist
-	if utils.CheckFileExist(in) {
-		logs.InfoLog(fmt.Sprintf("Start read file \"%s\". Size: %d", in, utils.GetFileSize(in)))
-	} else {
-		logs.ErrorLog(fmt.Sprintf("File \"%s\" does not exist!", in))
-		return false
-	}
+	logs.InfoLog(fmt.Sprintf("Start read file \"%s\". Size: %d bytes.", in, utils.GetFileSize(in)))
 	// try to read the whole file
 	data, err := ioutil.ReadFile(in)
 	if err != nil {

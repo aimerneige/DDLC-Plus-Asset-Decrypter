@@ -26,3 +26,16 @@ func CheckFileExist(f string) bool {
 		return false
 	}
 }
+
+// CheckFileIsDir Check if file a directory
+func CheckFileIsDir(f string) bool {
+	fi, err := os.Stat(f)
+	if err != nil {
+		return false
+	}
+	if fi.IsDir() {
+		return true
+	} else {
+		return false
+	}
+}
