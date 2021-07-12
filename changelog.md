@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+
+Support check cy file.
+
 ## 1.0.1
 
 Fix some log print error.
