@@ -10,7 +10,7 @@ ddlcpad 是 *Doki Doki Literature Club Plus Asset Decrypter* 的简写。
 
 ## 如何安装
 
-你可以在 [release](https://github.com/aimerneige/DDLC-Plus-Asset-Decrypter/releases) 下载一个编译好的二进制文件。或者你可以 [自己编译](https://github.com/aimerneige/DDLC-Plus-Asset-Decrypter#how-to-build)。
+你可以在 [release](https://github.com/aimerneige/DDLC-Plus-Asset-Decrypter/releases) 下载一个编译好的二进制文件。或者你可以 [自己编译](https://github.com/aimerneige/DDLC-Plus-Asset-Decrypter/blob/master/README-CN.md#%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91)。
 
 ## 如何使用
 
