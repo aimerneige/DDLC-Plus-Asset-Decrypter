@@ -74,4 +74,4 @@ PR welcome. :)
 
 ## More Question
 
-Post your question on issue please.
+Post your question on [issue](https://github.com/aimerneige/DDLC-Plus-Asset-Decrypter/issues) please.

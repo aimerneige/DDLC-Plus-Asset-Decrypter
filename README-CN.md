@@ -72,4 +72,4 @@ go build -o ddlcpad.exe
 
 ## 其他问题
 
-欢迎提 issue。
+欢迎提 [issue](https://github.com/aimerneige/DDLC-Plus-Asset-Decrypter/issues)。
