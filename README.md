@@ -1,5 +1,7 @@
 # ddlcpad
 
+[简体中文](./README-CN.md)
+
 ## What is this
 
 ddlcpad is short of *Doki Doki Literature Club Plus Asset Decrypter*
