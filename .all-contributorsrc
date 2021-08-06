@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "aimerneige",
+      "name": "Aimer Neige",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51701792?v=4",
+      "profile": "https://aimerneige.com",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "DDLC-Plus-Asset-Decrypter",
+  "projectOwner": "aimerneige",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
