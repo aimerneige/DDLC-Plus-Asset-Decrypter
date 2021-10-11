@@ -47,7 +47,7 @@ func Execute() {
 			if utils.CheckFileIsDir(fileIn) {
 				logs.InfoLog(fmt.Sprintf("Directory \"%s\" detect, try to decrypt all file in it.", fileIn))
 				// todo decrypt whole folder
-				logs.ErrorLog("(pr welcome) Read for next version :(")
+				logs.ErrorLog("(pr welcome) Wait for next version :(")
 				return nil
 			}
 
