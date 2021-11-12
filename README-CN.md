@@ -66,7 +66,7 @@ go build -o ddlcpad.exe
 
 ## 开源相关
 
-**参考 <https://github.com/MlgmXyysd/DDLC-Plus-Asset-Decrypter>**
+**算法参考 <https://github.com/MlgmXyysd/DDLC-Plus-Asset-Decrypter>**
 
 **命令行库 <https://github.com/urfave/cli>**
 
