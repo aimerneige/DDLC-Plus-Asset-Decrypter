@@ -4,7 +4,7 @@
 
 ddlcpad 是 *Doki Doki Literature Club Plus Asset Decrypter* 的简写。
 
-你可以使用这个命令行工具解密来自《心跳文学部 Plus》的 `*.cy` 资源文件。
+你可以使用这个命令行工具解密来自[《心跳文学部 Plus》](https://ddlc.plus/)的 `*.cy` 资源文件。
 
 解密成功后，你会得到一个 `*.out` 文件。之后使用 [Perfare/AssetStudio](https://github.com/Perfare/AssetStudio/) 即可得到所有的素材资源。
 

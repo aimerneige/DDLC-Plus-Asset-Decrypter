@@ -9,7 +9,7 @@
 
 ddlcpad is short of *Doki Doki Literature Club Plus Asset Decrypter*
 
-You can decrypt the `*.cy` file from *Doki Doki Literature Club Plus* with this cli binary.
+You can decrypt the `*.cy` file from [*Doki Doki Literature Club Plus*](https://ddlc.plus/) with this cli binary.
 
 After decrypt, you will get a `*.out` file. Put it into [Perfare/AssetStudio](https://github.com/Perfare/AssetStudio/) to get the assert file.
 
