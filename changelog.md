@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+
+Support decrypt directory.
+
 ## 1.1.1
 
 DO NOT USE ELSE

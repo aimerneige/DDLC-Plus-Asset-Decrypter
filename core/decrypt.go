@@ -47,6 +47,60 @@ func Decrypt(in, out string) bool {
 	return true
 }
 
+// DecryptDirectly Decrypt all data in directory and create new file.
+func DecryptDirectly(dirPath string) {
+	logs.InfoLog(fmt.Sprintf("Start read files in directory \"%s\".", dirPath))
+
+	successful := 0
+	failed := 0
+	skiped := 0
+
+	// read files in directory
+	files, err := ioutil.ReadDir(dirPath)
+	if err != nil {
+		// todo err handle
+		panic(err)
+	}
+
+	for _, file := range files {
+		// if file is a directory, skip.
+		if file.IsDir() {
+			logs.InfoLog(fmt.Sprintf("Directory \"%s\" found, skip.", file.Name()))
+			skiped++
+			continue
+		}
+
+		// file name
+		in := dirPath + "/" + file.Name()
+		out := fmt.Sprintf("%s.out", in)
+
+		// if a *.cy.out file exists, skip.
+		if utils.CheckFileExist(out) {
+			logs.InfoLog(fmt.Sprintf("File \"%s\" already exist, skip.", out))
+			skiped++
+			continue
+		}
+
+		// try to decrypt file
+		if Decrypt(in, out) {
+			logs.InfoLog(fmt.Sprintf("File \"%s\" decrypt successful!", in))
+			successful++
+		} else {
+			logs.ErrorLog(fmt.Sprintf("File \"%s\" decrypt failed!", in))
+			failed++
+		}
+	}
+
+	total := successful + failed + skiped
+
+	// print result
+	logs.InfoLog("Decrypt finished.")
+	logs.InfoLog(fmt.Sprintf("Successful: %d", successful))
+	logs.InfoLog(fmt.Sprintf("Failed: %d", failed))
+	logs.InfoLog(fmt.Sprintf("Skipped: %d", skiped))
+	logs.InfoLog(fmt.Sprintf("Total: %d", total))
+}
+
 // xorByte XOR all bytes input with decrypt key
 func xorByte(str []byte) (ret []byte) {
 	for i := 0; i < len(str); i++ {

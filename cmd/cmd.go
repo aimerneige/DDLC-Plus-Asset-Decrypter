@@ -18,8 +18,8 @@ func Execute() {
 	app := &cli.App{
 		Name:      "ddlcpad",
 		Usage:     "Doki Doki Literature Club Plus Asset Decrypter",
-		UsageText: "ddlcpad file",
-		Version:   "1.1.1",
+		UsageText: "ddlcpad file/directory",
+		Version:   "1.2.0",
 		Action: func(c *cli.Context) error {
 
 			// if wrong args, exit
@@ -46,8 +46,8 @@ func Execute() {
 			// check if a directory
 			if utils.CheckFileIsDir(fileIn) {
 				logs.InfoLog(fmt.Sprintf("Directory \"%s\" detect, try to decrypt all file in it.", fileIn))
-				// todo decrypt whole folder
-				logs.ErrorLog("(pr welcome) Wait for next version :(")
+				core.DecryptDirectly(fileIn)
+				logs.DecryptDirectlySuccessfulMsg()
 				return nil
 			}
 

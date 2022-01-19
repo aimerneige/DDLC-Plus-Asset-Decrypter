@@ -32,6 +32,19 @@ func DecryptSuccessfulMsg() {
 	fmt.Print("\033[32m***********************************************************\033[0m\n")
 }
 
+// DecryptDirectlySuccessfulMsg Print help message when decrypt directly success.
+func DecryptDirectlySuccessfulMsg() {
+	fmt.Print("\033[32m*****************************************************\033[0m\n")
+	fmt.Print("\033[32m*               Decrypted Successful!               *\033[0m\n")
+	fmt.Print("\033[32m* Decryption has been completed.                    *\033[0m\n")
+	fmt.Print("\033[32m* There may be something wrong, all error has been  *\033[0m\n")
+	fmt.Print("\033[32m* skiped, you can check the log for more detail.    *\033[0m\n")
+	fmt.Print("\033[32m* Now you can use AssetStudio to get all the assert *\033[0m\n")
+	fmt.Print("\033[32m* files. Here to download AssertStudio:             *\033[0m\n")
+	fmt.Print("\033[32m* <https://github.com/Perfare/AssetStudio>          *\033[0m\n")
+	fmt.Print("\033[32m*****************************************************\033[0m\n")
+}
+
 // DecryptFailMsg Print help message when decrypt fail.
 func DecryptFailMsg() {
 	fmt.Print("\033[31m***********************************************************\033[0m\n")
