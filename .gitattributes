@@ -4,5 +4,13 @@
 *.xml   text    eof=lf
 *.md    text    eof=lf
 *.txt   text    eof=lf
+*.sh    text    eof=lf
+go.mod  text    eof=lf
+go.sum  text    eof=lf
+LICENSE text    eof=lf
 *.png   binary
 *.jpg   binary
+.editorconfig   text  eof=lf
+.gitattributes  text  eof=lf
+.gitconfig  text  eof=lf
+.gitignore  text  eof=lf
