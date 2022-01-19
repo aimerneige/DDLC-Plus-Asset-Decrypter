@@ -13,7 +13,7 @@ import (
 
 const decrypt_key = 40 // decrypt key BY MlgmXyysd
 
-// DecryptDirectly Decrypt data and create a new file.
+// Decrypt Decrypt data and create a new file.
 func Decrypt(in, out string) bool {
 	logs.InfoLog(fmt.Sprintf("Start read file \"%s\". Size: %d bytes.", in, utils.GetFileSize(in)))
 
