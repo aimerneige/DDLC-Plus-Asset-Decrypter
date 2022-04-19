@@ -75,6 +75,10 @@ PR welcome. :)
 
 **Cli <https://github.com/urfave/cli>**
 
+## Support This Project 🎁
+
+If you love this project, you can simply click a star or contributes codes through an issue, or create a pull request.
+
 ## More Question ⁉️
 
 Post your question on [issue](https://github.com/aimerneige/DDLC-Plus-Asset-Decrypter/issues) please.
