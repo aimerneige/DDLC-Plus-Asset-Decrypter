@@ -70,6 +70,10 @@ go build -o ddlcpad.exe
 
 **命令行库 <https://github.com/urfave/cli>**
 
+## 支持这个项目 🎁
+
+如果你喜欢并想要支持这个项目，可以简单通过点 star 的方式来表示认可，或者是通过提出 issue 或发起 pr 的方式来贡献代码。
+
 ## 其他问题 ⁉️
 
 欢迎提 [issue](https://github.com/aimerneige/DDLC-Plus-Asset-Decrypter/issues)。
