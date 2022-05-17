@@ -6,6 +6,7 @@ package core
 import (
 	"fmt"
 	"io/ioutil"
+	"path"
 
 	"github.com/AimerNeige/DDLC-Plus-Asset-Decrypter/logs"
 	"github.com/AimerNeige/DDLC-Plus-Asset-Decrypter/utils"
@@ -71,7 +72,7 @@ func DecryptDirectly(dirPath string) {
 		}
 
 		// file name
-		in := dirPath + "/" + file.Name()
+		in := path.Join(dirPath, file.Name())
 		out := fmt.Sprintf("%s.out", in)
 
 		// if a *.cy.out file exists, skip.
