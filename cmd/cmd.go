@@ -23,7 +23,7 @@ func Execute() {
 		Flags: []cli.Flag{
 			&cli.BoolFlag{
 				Name:  "encrypt",
-				Usage: "Encrypt the specified file or directory",
+				Usage: "Encrypt the specified file",
 			},
 		},
 		Action: func(c *cli.Context) error {
