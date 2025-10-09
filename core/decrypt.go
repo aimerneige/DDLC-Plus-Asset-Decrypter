@@ -5,7 +5,8 @@ package core
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io/fs"
+	"os"
 	"path"
 
 	"github.com/AimerNeige/DDLC-Plus-Asset-Decrypter/logs"
@@ -19,7 +20,7 @@ func Decrypt(in, out string) bool {
 	logs.InfoLog(fmt.Sprintf("Start read file \"%s\". Size: %d bytes.", in, utils.GetFileSize(in)))
 
 	// try to read the whole file
-	data, err := ioutil.ReadFile(in)
+	data, err := os.ReadFile(in)
 	if err != nil {
 		logs.ErrorLog(logs.FailToReadFile(in))
 		return false
@@ -39,7 +40,34 @@ func Decrypt(in, out string) bool {
 
 	// write output file
 	logs.InfoLog(fmt.Sprintf("Start writing file \"%s\".", out))
-	err = ioutil.WriteFile(out, data, 0644)
+	err = os.WriteFile(out, data, 0644)
+	if err != nil {
+		logs.ErrorLog(logs.FailToWriteFile(out))
+		return false
+	}
+	logs.InfoLog(fmt.Sprintf("Write file \"%s\" successful.", out))
+	return true
+}
+
+func Encrypt(in, out string) bool {
+	logs.InfoLog(fmt.Sprintf("Start read file \"%s\". Size: %d bytes.", in, utils.GetFileSize(in)))
+
+	// try to read the whole file
+	data, err := os.ReadFile(in)
+	if err != nil {
+		logs.ErrorLog(logs.FailToReadFile(in))
+		return false
+	}
+	logs.InfoLog(fmt.Sprintf("File \"%s\" read successful!", in))
+
+	// start encrypt
+	logs.InfoLog("Encrypt Start")
+	data = xorByte(data)
+	logs.InfoLog("Encrypt End")
+
+	// write output file
+	logs.InfoLog(fmt.Sprintf("Start writing file \"%s\".", out))
+	err = os.WriteFile(out, data, 0644)
 	if err != nil {
 		logs.ErrorLog(logs.FailToWriteFile(out))
 		return false
@@ -57,13 +85,21 @@ func DecryptDirectly(dirPath string) {
 	skiped := 0
 
 	// read files in directory
-	files, err := ioutil.ReadDir(dirPath)
+	entries, err := os.ReadDir(dirPath)
 	if err != nil {
 		// todo err handle
 		panic(err)
 	}
+	infos := make([]fs.FileInfo, 0, len(entries))
+	for _, entry := range entries {
+		info, err := entry.Info()
+		if err != nil {
+			panic(err)
+		}
+		infos = append(infos, info)
+	}
 
-	for _, file := range files {
+	for _, file := range infos {
 		// if file is a directory, skip.
 		if file.IsDir() {
 			logs.InfoLog(fmt.Sprintf("Directory \"%s\" found, skip.", file.Name()))

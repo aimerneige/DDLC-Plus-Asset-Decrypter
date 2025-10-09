@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0
+
+Support encrypt a single file back to cy file.
+
 ## 1.2.0
 
 Support decrypt directory.

@@ -18,8 +18,14 @@ func Execute() {
 	app := &cli.App{
 		Name:      "ddlcpad",
 		Usage:     "Doki Doki Literature Club Plus Asset Decrypter",
-		UsageText: "ddlcpad file/directory",
-		Version:   "1.2.0",
+		UsageText: "ddlcpad [--encrypt] file/directory",
+		Version:   "1.3.0",
+		Flags: []cli.Flag{
+			&cli.BoolFlag{
+				Name:  "encrypt",
+				Usage: "Encrypt the specified file or directory",
+			},
+		},
 		Action: func(c *cli.Context) error {
 
 			// if wrong args, exit
@@ -29,7 +35,7 @@ func Execute() {
 				return nil
 			}
 
-			// right args, continute
+			// right args, continue
 			logs.PrintAppInformation()
 
 			// read args and output
@@ -45,22 +51,52 @@ func Execute() {
 
 			// check if a directory
 			if utils.CheckFileIsDir(fileIn) {
+				if c.Bool("encrypt") {
+					logs.ErrorLog("Encrypting directories is not supported.")
+					return nil
+				}
 				logs.InfoLog(fmt.Sprintf("Directory \"%s\" detect, try to decrypt all file in it.", fileIn))
 				core.DecryptDirectly(fileIn)
 				logs.DecryptDirectlySuccessfulMsg()
 				return nil
 			}
-
 			// file exist and not a folder
-			logs.InfoLog(fmt.Sprintf("File \"%s\" detect, try to decrypt it.", fileIn))
 
-			// try to create a *.cy.out file
+			if c.Bool("encrypt") {
+				// try to encrypt a single file
+
+				logs.InfoLog(fmt.Sprintf("File \"%s\" detect, try to encrypt it.", fileIn))
+
+				// try to create a *_encrypted.cy file
+				fileOut := fmt.Sprintf("%s_encrypted.cy", fileIn)
+				logs.InfoLog(fmt.Sprintf("Output File: \"%s\".", fileOut))
+
+				// if a *_encrypted.cy exist, do nothing and exit (in case destroy some useful file)
+				if utils.CheckFileExist(fileOut) {
+					logs.ErrorLog(fmt.Sprintf("File (or folder) \"%s\" has exist.", fileOut))
+					logs.EncryptFailMsg()
+					return nil
+				}
+
+				// ready to decrypt file
+				if core.Encrypt(fileIn, fileOut) {
+					logs.EncryptSuccessfulMsg()
+					return nil
+				}
+
+				// decrypt fail
+				logs.EncryptFailMsg()
+				return nil
+			}
+
+			// decrypt logic
+			logs.InfoLog(fmt.Sprintf("File \"%s\" detected, trying to decrypt it.", fileIn))
 			fileOut := fmt.Sprintf("%s.out", fileIn)
 			logs.InfoLog(fmt.Sprintf("Output File: \"%s\".", fileOut))
 
-			// if a *.cy.out file exist, do nothing and exit (in case destroy some useful file)
+			// if a *.out file exists, do nothing and exit
 			if utils.CheckFileExist(fileOut) {
-				logs.ErrorLog(fmt.Sprintf("File (or folder) \"%s\" has exist.", fileOut))
+				logs.ErrorLog(fmt.Sprintf("File \"%s\" already exists.", fileOut))
 				logs.DecryptFailMsg()
 				return nil
 			}
