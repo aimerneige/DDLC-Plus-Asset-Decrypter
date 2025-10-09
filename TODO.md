@@ -2,3 +2,5 @@
 - [ ] read file in cache
 - [ ] Chinese language support
 - [x] decrypt directly
+- [ ] encrypt directory
+- [ ] check assert file when encrypt

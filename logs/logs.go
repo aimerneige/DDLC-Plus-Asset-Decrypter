@@ -56,6 +56,25 @@ func DecryptFailMsg() {
 	fmt.Print("\033[31m***********************************************************\033[0m\n")
 }
 
+func EncryptFailMsg() {
+	fmt.Print("\033[31m***********************************************************\033[0m\n")
+	fmt.Print("\033[31m*                     Encrypted Fail!                     *\033[0m\n")
+	fmt.Print("\033[31m* Opus, there is something wrong. You can check the error *\033[0m\n")
+	fmt.Print("\033[31m* log and try again.                                      *\033[0m\n")
+	fmt.Print("\033[31m* If you still have problem, post a issue here:           *\033[0m\n")
+	fmt.Print("\033[31m* github.com/AimerNeige/DDLC-Plus-Asset-Decrypter/issue   *\033[0m\n")
+	fmt.Print("\033[31m***********************************************************\033[0m\n")
+}
+
+func EncryptSuccessfulMsg() {
+	fmt.Print("\033[32m***********************************************************\033[0m\n")
+	fmt.Print("\033[32m*                  Encrypted Successful!                  *\033[0m\n")
+	fmt.Print("\033[32m* Congratulations! You have successfully encrypted your   *\033[0m\n")
+	fmt.Print("\033[32m* file into a .cy file. Checkout GitHub for any question. *\033[0m\n")
+	fmt.Print("\033[32m* Github: github.com/AimerNeige/DDLC-Plus-Asset-Decrypter *\033[0m\n")
+	fmt.Print("\033[32m***********************************************************\033[0m\n")
+}
+
 // ErrorLog Print error log with color and time.
 func ErrorLog(msg string) {
 	fmt.Print("\033[31m[E]\033[0m")

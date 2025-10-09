@@ -35,6 +35,20 @@ Basic usage:
 
 Use `--help` or `-h` to get more help.
 
+### Encrypt cy file
+
+As for community request, you can encrypt a file back to .cy file. Just add `--encrypt` in your command:
+
+```bash
+# On Linux
+./ddlcpad --encrypt <file_name>
+```
+
+```powershell
+# On windows
+.\ddlcpad.exe --encrypt <file_name>
+```
+
 ## How to build 🤓
 
 Just install and config [golang](https://golang.org/doc/install) on your computer, then run this command:
@@ -63,7 +77,7 @@ There has a [project](https://github.com/MlgmXyysd/DDLC-Plus-Asset-Decrypter) do
 
 What's more, php script for those who doesn't lean programming are very very hard to use. I wants to create a binary file which is easy to use. So that people can just download a binary file from release and use it without build or run code themselves.
 
-## Why read file with `ioutil.ReadFile()` ❓
+## Why read file with `os.ReadFile()` ❓
 
 The biggest assert file is `gallery_images.cy` and with `582 MB`, There is no way to use too much memory.
 

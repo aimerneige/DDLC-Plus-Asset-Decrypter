@@ -30,6 +30,20 @@ ddlcpad 是 *Doki Doki Literature Club Plus Asset Decrypter* 的简写。
 
 使用 `--help` 或 `-h` 查看更多的帮助信息。
 
+### 加密文件
+
+由于社区的请求，你可以把一个文件加密回 cy 文件。在参数中添加 `--encrypt` 即可：
+
+```bash
+# On Linux
+./ddlcpad --encrypt <file_name>
+```
+
+```powershell
+# On windows
+.\ddlcpad.exe --encrypt <file_name>
+```
+
 ## 如何编译 🤓
 
 在你的电脑上安装和配置 [golang](https://golang.org/doc/install)，然后执行下面的指令：
@@ -58,7 +72,7 @@ go build -o ddlcpad.exe
 
 此外，php 脚本对于那些没有学过编程的人来说用起来比较困难。我想要的是一个易于使用的二进制文件。这样就可以直接在 release 下载一个二进制文件而不需要自己来编译或是运行它。
 
-## 为什么使用 `ioutil.ReadFile()` 来读取文件 ❓
+## 为什么使用 `os.ReadFile()` 来读取文件 ❓
 
 最大的资源文件是 `gallery_images.cy` ，它的大小是 `582 MB`，即使全部读取到内存里也不会占用太大的内存。
 
